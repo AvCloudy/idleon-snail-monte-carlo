@@ -73,4 +73,3 @@ while successRate < target:
 	encouragement += 1
 print("Success rate of {}% reached at snail level {} by encouraging it {} times.".format(
 	successRate*100, currentLevel, encouragement-1))
-print("Did {} sims each round.".format(sims))
