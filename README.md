@@ -1,6 +1,7 @@
-Usage: idleonmonte.py <snail level> <encouragement level> <treble notes> <target success rate> <number of sims>
+Usage: idleonmonte.py \<snail level\> \<encouragement level\> \<treble notes\> 
+\<target success rate\> \<number of sims\>
 
-If no values provided, defaults to 19, 13, 10920000000, 0.8 and 1000000.
+If no values provided, defaults to 19, 13, 10920000000, 0.8 and 1000000. 
 
 Does a monte carlo simulation for Idleon snail upgrades at a given level, and simulates how likely you are to get an upgrade vs a reset, and 
 how many attempts on average you'll need to successfully upgrade. 
