@@ -8,3 +8,5 @@ how many attempts on average you'll need to successfully upgrade. Uses that info
 
 Formulas derived from https://docs.google.com/spreadsheets/d/1HTlligzywM5xtN1BfPhoolynZwqFmf1h/edit?gid=1764016313#gid=1764016313 courtesy of
 EternallyFrumheldt#7296 who himself derived them from Chyromyr#1448.
+
+Absolutely ridiculous way to do this, but I wanted to test intuitive notions vs simple formulae. 
