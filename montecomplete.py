@@ -13,20 +13,20 @@ def chanceFailure(currentLevel, encouragement):
     return(max(0,(((currentLevel+1)**0.07) - 1)/(1+(300*encouragement)/(100+encouragement)/100)))
 
 try:
-    targetLevel = int(sys.argv[1])
-except:
-    targetLevel = 20
-try:
-    trebleNotes = int(sys.argv[2])
+    trebleNotes = int(sys.argv[0])
 except:
     trebleNotes = 10920000000
 # How many times you want to run each monte carlo simulation
 try:
-    sims = int(sys.argv[3])
+    sims = int(sys.argv[1])
 except:
     sims = 5
-    
-encouragementRange = 5
+
+try:
+    encouragementRange = int(sys.argv[2])
+except:
+    encouragementRange = 5
+
 sims05 = []
 sims510 = []
 sims1015 = []
@@ -49,6 +49,11 @@ elif chanceSuccess(10,0) == 1:
 elif chanceSuccess(5,0) == 1:
     sims05.append(((0,0,0,0,0),0))
     minLevel = 5
+
+# really really slow, obviously. 
+# going to try strategy of creating a list of lists, [range(20)] * 25, and iterating over that
+# by not bunching simulations, can also just create code that works across any level
+# while currentLevel % 5 != 0: currentLevel -= 1 or currentLevel -= currentLevel % 5
 
 for iteration in range(sims):
     for v in range(encouragementRange+1):
@@ -137,8 +142,6 @@ for sim in [sims05,sims510,sims1015,sims1520,sims2025]:
     shortestSequence = listOfMins[listOfMinsTotalVal.index((min(listOfMinsTotalVal)))]
     fullSequence.append(shortestSequence)
 
-print("You should encourage {} times at level 1, {} times at level 2, {} times at level 3, {} times at level 4.".format(
-    shortestSequence[0],shortestSequence[1],shortestSequence[2],shortestSequence[3],shortestSequence[4]))
 print("You should encourage the following number of times at each level:\
       \n 1: {} \t6: {} \t11: {} \t16: {}\t21: {}\n 2: {} \t7: {} \t12: {} \t17: {}\t 22: {}\
       \n 3: {} \t8: {} \t13: {} \t18: {}\t23: {}\n 4: {} \t9: {} \t14: {} \t19: {}\t24: {}\
